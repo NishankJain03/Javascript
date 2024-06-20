@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- <div >
+        <h1 id="title" class="heading"> DOM learning <span style="display: none;">Text test</span></h1>
+        <p> Lorem ipsum dolor sit amet</p> -->
+        <!-- the difference between textContent and innerText is that in textContent all the text is visible irrespective of the css properties -->
+        <!-- but in innerText only selected text is visible -->
+        <!-- In innerHTML we get html tags along with the text -->
+
+        <!-- query selector => gives the first tag -->
+        <!-- <input type='password'>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul> -->
+
+        <!-- we can convert the nodeList or HTML collection in array using Array.from() -->
+    <!-- </div> -->
+    <!-- <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div> -->
+
+    <ul class="number">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ul>
+</body>
+<script>
+    // const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children);
+    // for(let i =0;i< parent.children.length;i++){
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    // parent.children[1].style.color = 'green'
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // to find the parent element
+    // console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+
+    // console.log("Nodes", parent.childNodes);
+
+    // Creating an element
+
+    // const div = document.createElement('div')
+    // console.log(div);
+    // // we can also provide class name and id
+    // div.className = 'main'
+    // div.id = 'snax'
+    // div.setAttribute('title', 'generated_title')
+    // div.style.backgroundColor = 'green'
+    // div.style.padding = '12px'
+    // // here you can user .innerText or document.textNode
+
+    // const addText = document.createTextNode('chai aur code')
+    // // div.append(addText)
+    // div.appendChild(addText)
+
+    // // document.body.append(div)
+    // document.body.appendChild(div)
+
+
+    // if we want to add the a new list 
+    // here it travels the whole dom tree - structure
+    function addNumber(number){
+        const li = document.createElement('li')
+        li.innerHTML = `${number}`
+        document.querySelector('.number').appendChild(li)
+    }
+    addNumber('Four')
+
+    // optimised approach
+    function addNumberOpti(number){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(number))
+        document.querySelector('.number').appendChild(li)
+    }
+    addNumberOpti('Five')
+
+    // Edit
+    const secondNumber = document.querySelector('li:nth-child(2)')
+
+    // 1st approach
+    // secondNumber.innerHTML = "Six"
+
+    // 2nd approach 
+    const newEle = document.createElement('li')
+    newEle.textContent = 'Seven'
+    secondNumber.replaceWith(newEle)
+
+    // remove element
+    const removeEleme = document.querySelector('li:last-child')
+    removeEleme.remove()
+
+</script>
+</html>

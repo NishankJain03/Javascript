@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#grey {
+    background-color: grey;
+}
+
+#yellow {
+    background-color: yellow;
+    color: black; /* Adjust text color for better readability */
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
